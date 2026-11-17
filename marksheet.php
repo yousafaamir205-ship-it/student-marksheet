@@ -27,9 +27,17 @@ if (!$data) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marksheet - <?= htmlspecialchars($data['full_name']) ?></title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
+
+<div class="navbar">
+    <div><strong>Academic Portal</strong></div>
+    <div>
+        <a href="index.php">Add New Record</a>
+        <a href="records.php">View All Records</a>
+    </div>
+</div>
 
 <div class="marksheet">
     <h1>Academic Report Card</h1>
@@ -67,9 +75,9 @@ if (!$data) {
 </div>
 
 <div class="btn-print">
-    <button onclick="window.print()" style="max-width: 200px;">Print Marksheet</button>
+    <button onclick="window.print()" style="max-width: 220px;">Print Marksheet</button>
     <br><br>
-    <a href="index.php" style="color: #007bff; text-decoration: none;">&larr; Back to Entry Form</a>
+    <a href="records.php" style="color: #2563eb; text-decoration: none; font-weight: 500;">&larr; Back to All Records</a>
 </div>
 
 </body>

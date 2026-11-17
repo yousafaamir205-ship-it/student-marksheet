@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt2->execute([$student_id, $sub1, $sub2, $sub3, $sub4, $sub5, $total_obtained, $percentage, $gpa, $status]);
 
         $pdo->commit();
-        $message = "Record saved successfully! <a href='marksheet.php?id={$student_id}'>View Marksheet</a>";
+        $message = "Record saved successfully! <a href='marksheet.php?id={$student_id}' style='font-weight:bold; color:#166534;'>View Marksheet &rarr;</a>";
     } catch (Exception $e) {
         $pdo->rollBack();
         $message = "Error saving record: " . $e->getMessage();
@@ -55,9 +55,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Grade Calculator</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
+
+<div class="navbar">
+    <div><strong>Academic Portal</strong></div>
+    <div>
+        <a href="index.php">Add New Record</a>
+        <a href="records.php">View All Records</a>
+    </div>
+</div>
 
 <div class="card">
     <h2>Student Marksheet Entry</h2>
@@ -68,14 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="">
         <div class="form-group">
             <label>Roll Number</label>
-            <input type="text" name="roll_number" required>
+            <input type="text" name="roll_number" placeholder="e.g., CS-2026-01" required>
         </div>
         <div class="form-group">
             <label>Full Name</label>
-            <input type="text" name="full_name" required>
+            <input type="text" name="full_name" placeholder="Enter student full name" required>
         </div>
         
-        <h4>Subject Marks (Out of 100)</h4>
+        <h4 style="margin-top: 25px; color: #1e293b;">Subject Marks (Out of 100)</h4>
         <div class="form-group"><label>Mathematics</label><input type="number" name="sub1" min="0" max="100" required></div>
         <div class="form-group"><label>Physics</label><input type="number" name="sub2" min="0" max="100" required></div>
         <div class="form-group"><label>Chemistry</label><input type="number" name="sub3" min="0" max="100" required></div>

@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1e293b;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+/* Main Card Container */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 550px;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-wide {
+    max-width: 900px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #1e293b;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #475569;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+button, .btn {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .btn:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+    width: auto;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+.msg {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    border-radius: 6px;
+    color: #166534;
+}
+
+/* Tables & Marksheet */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+.marksheet {
+    background: #fff;
+    border: 2px solid #1e293b;
+    padding: 40px;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.marksheet h1, .marksheet h3 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.status-pass {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.status-fail {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.btn-print {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 700px;
+}
+
+@media print {
+    .navbar, .btn-print {
+        display: none;
+    }
+    body {
+        background: #fff;
+    }
+    .marksheet {
+        border: 2px solid #000;
+        margin: 0;
+        width: 100%;
+    }
+}
